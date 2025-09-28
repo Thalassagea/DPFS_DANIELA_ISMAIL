@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrarse</title>
+  <link rel="stylesheet" href="../Styles/style.css">
+</head>
+<body>
+
+  <div class="layout">
+    <header>
+      <div class="nav-container">
+        <div class="logo">MindCare</div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <nav>
+          <a href="index.html">Inicio</a>
+          <a href="courseDetail.html">Cursos</a>
+          <a href="courseCart.html">Carrito</a>
+          <a href="login.html">Ingresar</a>
+          <a href="register.html">Registrarse</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="registro-main">
+      <section class="formulario-registro">
+        <h2>Crear cuenta</h2>
+        <form action="#" method="post">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" required>
+
+        <label class="checkbox-label">
+          <input type="checkbox" required>
+            Acepto términos y condiciones
+        </label>
+
+          <button type="submit" class="btn">Registrarse</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 MindCare - Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
+

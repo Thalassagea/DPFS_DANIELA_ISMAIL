@@ -22,3 +22,6 @@ Me entusiasma especialmente este proyecto porque combina dos áreas que me apasi
 - **Mindvalley** : Plataforma de bienestar con diseño moderno, contenido interactivo y enfoque en el desarrollo personal integral.
 - **Insight Timer** : App con variedad de formatos (cursos, meditaciones, eventos), muy accesible y versátil.
 - **Unmind** : Plataforma corporativa enfocada en mental-health training para empresas; utiliza coaching conversacional con IA, recursos científicos y acceso a terapeutas, ideal para inspirarse en un enfoque B2B (Business to Business). 
+
+## Retrospectiva Sprint 1
+Para ver el análisis de la retrospectiva del Sprint 1, consultar el archivo [retro.md](./retro.md).
