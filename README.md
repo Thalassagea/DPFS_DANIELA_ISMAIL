@@ -25,3 +25,9 @@ Me entusiasma especialmente este proyecto porque combina dos áreas que me apasi
 
 ## Retrospectiva Sprint 1
 Para ver el análisis de la retrospectiva del Sprint 1, consultar el archivo [retro.md](./retro.md).
+
+## Tablero de trabajo
+
+El seguimiento del sprint 2 se puede visualizar a través del siguiente tablero en Trello:
+
+[Trello - Sprint 2 MindCare](https://trello.com/invite/b/68d5062f6ecd480dbcaff708/ATTI858a6b83c4c6f85ae69529b06b83162047773EB9/sprint-2-mindcare)
