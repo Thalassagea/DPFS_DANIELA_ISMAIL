@@ -1,21 +1,24 @@
-# Retrospectiva - Sprint 1 
+# Retrospectiva - Sprint 2 
 
 ##  Comenzar a hacer
-- Planificar mejor el tiempo de cada tarea.
-- Dividir los objetivos grandes en pasos más pequeños.
+- Separar desde el inicio los estilos en archivos organizados (por páginas o componentes).
+- Dejar espacios en el código que luego será dinámico, para facilitar la integración con EJS.
+- Chequear diseños responsivos desde las primeras etapas del maquetado.
 
 ##  Hacer más
-- Usar herramientas digitales especificas/adecuadas para organizar visualmente el diseño.
-- Buscar referencias que me sirvan como guia.
+- Validar accesibilidad y semántica en el HTML.
+- Documentar los avances en cada commit y usar mejor los mensajes (!!).
+- Usar más flexbox o grid para organizar mejor el contenido.
 
 ##  Continuar haciendo
-- Tomar notas claras e ir de a un paso a la vez. 
-- Usar GitHub para mantener todo respaldado.
+- Mantener una coherencia visual en todas las vistas.
+- Trabajar con wireframes como guía antes de maquetar.
+- Organizarme y desmenuzar las tareas en los tableros de Trello para ir haciendo un paso a la vez, una tarea a la vez. 
+- Utilizar GitHub para versionar correctamente el proyecto.
 
 ##  Hacer menos
-- Dejar tareas para último momento.
-- Cambiar demasiado el diseño sin cerrar una versión final.
+- Repetir estructuras HTML completas en cada vista sin reutilización.
+- Maquetar sin revisar antes los wireframes finales.
 
 ##  Dejar de hacer
-- Procrastinar el inicio del sprint.
-- Subestimar el tiempo que lleva cada parte del proyecto.
+- Pasar por alto la estructura base del sitio en cada página (header, nav, footer).
