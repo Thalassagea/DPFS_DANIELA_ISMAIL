@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main class="detalle-curso">
+  <section class="curso-info">
+    <img src="<%= course.image %>" alt="<%= course.name %>">
+    <div class="info-texto">
+      <h2><%= course.name %></h2>
+      <p><strong>Categoría:</strong> <%= course.category %></p>
+      <p><strong>Precio:</strong> $<%= course.price %></p>
+      <p class="descripcion"><%= course.description %></p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

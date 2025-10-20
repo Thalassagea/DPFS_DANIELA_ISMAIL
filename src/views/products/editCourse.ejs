@@ -1,0 +1,30 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="registro-main">
+  <form class="formulario-registro" action="/course/edit/<%= course.id %>" method="POST">
+    <h2>Editar Curso</h2>
+
+    <label for="name">Nombre del curso</label>
+    <input type="text" id="name" name="name" value="<%= course.name %>" required>
+
+    <label for="description">Descripción</label>
+    <input type="text" id="description" name="description" value="<%= course.description %>" required>
+
+    <label for="image">Imagen (URL)</label>
+    <input type="text" id="image" name="image" value="<%= course.image %>">
+
+    <label for="category">Categoría</label>
+    <input type="text" id="category" name="category" value="<%= course.category %>">
+
+    <label for="color">Color</label>
+    <input type="text" id="color" name="color" value="<%= (course.colors && course.colors[0]) || '' %>">
+
+    <label for="price">Precio</label>
+    <input type="text" id="price" name="price" value="<%= course.price %>" required>
+
+    <button type="submit">Guardar Cambios</button>
+  </form>
+</main>
+
+<%- include('partials/footer') %>

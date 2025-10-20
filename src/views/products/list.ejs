@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main>
+  <section class="cursos-destacados">
+    <h2>Listado de Cursos</h2>
+    <div class="cursos">
+      <% courses.forEach(course => { %>
+        <div class="curso">
+          <img src="<%= course.image %>" alt="<%= course.name %>">
+          <h3><%= course.name %></h3>
+          <p><%= course.description %></p>
+          <a href="/course/<%= course.id %>" class="btn-vermas">Ver más</a>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

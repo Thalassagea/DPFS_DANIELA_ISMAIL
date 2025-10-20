@@ -1,0 +1,30 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main class="registro-main">
+  <form class="formulario-registro" action="/course/create" method="POST">
+    <h2>Crear Curso</h2>
+
+    <label for="name">Nombre del curso</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="description">Descripción</label>
+    <input type="text" id="description" name="description" required>
+
+    <label for="image">Imagen (URL)</label>
+    <input type="text" id="image" name="image">
+
+    <label for="category">Categoría</label>
+    <input type="text" id="category" name="category">
+
+    <label for="color">Color</label>
+    <input type="text" id="color" name="color">
+
+    <label for="price">Precio</label>
+    <input type="text" id="price" name="price" required>
+
+    <button type="submit">Crear Curso</button>
+  </form>
+</main>
+
+<%- include('partials/footer') %>
