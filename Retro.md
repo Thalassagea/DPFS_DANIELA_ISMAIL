@@ -1,24 +1,23 @@
-# Retrospectiva - Sprint 2 
+# Retrospectiva - Sprint 4 
 
 ##  Comenzar a hacer
-- Separar desde el inicio los estilos en archivos organizados (por páginas o componentes).
-- Dejar espacios en el código que luego será dinámico, para facilitar la integración con EJS.
-- Chequear diseños responsivos desde las primeras etapas del maquetado.
-
+-Planificar con más anticipación las dependencias entre rutas y vistas antes de codificar.
+-Documentar mejor cada ruta y controlador para mantener el orden en el backend.
+-Realizar pruebas de funcionamiento completas antes de subir cambios al repositorio.
 ##  Hacer más
-- Validar accesibilidad y semántica en el HTML.
-- Documentar los avances en cada commit y usar mejor los mensajes (!!).
-- Usar más flexbox o grid para organizar mejor el contenido.
+-Reforzar las validaciones de formularios (crear/editar productos).
+-Usar commits más descriptivos para dejar mejor registro de los avances.
+-Profundizar en la conexión entre diseño y funcionalidad, cuidando la coherencia del sitio.
 
 ##  Continuar haciendo
-- Mantener una coherencia visual en todas las vistas.
-- Trabajar con wireframes como guía antes de maquetar.
-- Organizarme y desmenuzar las tareas en los tableros de Trello para ir haciendo un paso a la vez, una tarea a la vez. 
-- Utilizar GitHub para versionar correctamente el proyecto.
+-Mantener la organización del proyecto y estructura de carpetas clara.
+-Usar Trello como guía de avance del sprint y control de tareas.
+-Trabajar con buenas prácticas en Express y EJS para mantener código limpio y funcional.
 
 ##  Hacer menos
-- Repetir estructuras HTML completas en cada vista sin reutilización.
-- Maquetar sin revisar antes los wireframes finales.
+-Corregir a último momento sin testeo previo.
+-Cambiar archivos en paralelo sin revisar el impacto en las rutas.
 
 ##  Dejar de hacer
-- Pasar por alto la estructura base del sitio en cada página (header, nav, footer).
+-Postergar el testeo de vistas hasta el final del sprint.
+-Agregar funcionalidades no pedidas en la consigna que consumen tiempo innecesario.
