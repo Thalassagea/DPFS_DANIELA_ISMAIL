@@ -2,12 +2,13 @@
 <%- include('../partials/header') %>
 
 <main>
-   <section class="hero">
+  <!-- Hero principal -->
+  <section class="hero">
     <div class="hero-content">
       <div class="hero-text">
         <h1>Crecimiento personal y bienestar emocional a tu alcance</h1>
         <p>
-          Espacio creado para ayudarte a conectar, disfrutar, y encontrar tu equilibrio.
+          Espacio creado para ayudarte a conectar, disfrutar y encontrar tu equilibrio.
           Aprendé a manejar el estrés, la ansiedad y mejorar tu bienestar integral.
         </p>
       </div>
@@ -20,25 +21,22 @@
     </div>
   </section>
 
-  <!-- Cursos destacados -->
+  <!-- Cursos destacados (DINÁMICOS desde products.json) -->
   <section class="destacados">
     <h2>Cursos destacados</h2>
     <div class="cursos">
-      <div class="curso">
-        <h3>Bienestar emocional</h3>
-        <p>Prioriza tu bienestar</p>
-        <a href="/course/1" class="btn-sec">Ver más</a>
-      </div>
-      <div class="curso">
-        <h3>Gestión de Estrés</h3>
-        <p>Aprendé cómo gestionarte</p>
-        <a href="/course/2" class="btn-sec">Ver más</a>
-      </div>
-      <div class="curso">
-        <h3>Mindfulness</h3>
-        <p>Adquirí habilidades</p>
-        <a href="/course/0" class="btn-sec">Ver más</a>
-      </div>
+      <% if (products && products.length > 0) { %>
+        <% products.forEach(course => { %>
+          <div class="curso">
+            <img src="<%= course.image %>" alt="<%= course.name %>">
+            <h3><%= course.name %></h3>
+            <p><%= course.description %></p>
+            <a href="/courses/<%= course.id %>" class="btn-sec">Ver más</a>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No hay cursos disponibles por el momento.</p>
+      <% } %>
     </div>
   </section>
 
@@ -48,11 +46,11 @@
     <div class="cards">
       <div class="card">
         <p>“MindCare me ayudó a entender mis emociones y a sentirme más tranquila.”</p>
-        <strong>— José Juarez</strong>
+        <strong>— José Juárez</strong>
       </div>
       <div class="card">
         <p>“Excelente plataforma. Los cursos son claros, humanos y prácticos.”</p>
-        <strong>— Juana Perez</strong>
+        <strong>— Juana Pérez</strong>
       </div>
       <div class="card">
         <p>“Recomiendo MindCare a cualquiera que busque bienestar real.”</p>

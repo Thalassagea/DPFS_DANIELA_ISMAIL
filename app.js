@@ -1,25 +1,34 @@
-// app.js
 const express = require('express');
-const path = require('path');
 const app = express();
+const path = require('path');
+const methodOverride = require('method-override');
 
-// Importar rutas
+// Rutas
 const mainRoutes = require('./routes/mainRoutes');
+const productsRoutes = require('./routes/productsRoutes');
+const usersRoutes = require('./routes/usersRoutes');
 
-// Configuración del motor de vistas
+// Configuración EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'src', 'views'));
 
-// Archivos estáticos (CSS, imágenes)
+// Archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware para formularios
+// Body parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Rutas principales
-app.use('/', mainRoutes);
+// Method override
+app.use(methodOverride('_method'));
 
-// Puerto
+// 🔹 Montaje de rutas
+app.use('/', mainRoutes);          // incluye /cart, /
+app.use('/courses', productsRoutes);
+app.use('/users', usersRoutes);
+
+// Server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});

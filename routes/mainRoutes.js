@@ -1,28 +1,25 @@
-// routes/mainRoutes.js
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
+const path = require('path');
 
-const courseController = require('../controllers/courseController');
-const userController = require('../controllers/userController');
+const DATA_PATH = path.join(__dirname, '..', 'data', 'products.json');
 
-// Página principal
-router.get('/', (req, res) => res.render('users/index', { title: "MindCare" }));
+// HOME
+router.get('/', (req, res) => {
+  let products = [];
+  try {
+    const data = fs.readFileSync(DATA_PATH, 'utf-8');
+    products = JSON.parse(data);
+  } catch (err) {
+    console.error('Error al leer products.json:', err);
+  }
+  res.render('users/index', { title: 'Inicio', products });
+});
 
-// Usuarios
-router.get('/register', userController.registerForm);
-router.post('/register', userController.register);
-router.get('/login', userController.loginForm);
-router.post('/login', userController.login);
-
-// Cursos
-router.get('/courses', courseController.list);
-router.get('/course/:id', courseController.detail);
-router.get('/course/create', courseController.createForm);
-router.post('/course/create', courseController.create);
-router.get('/course/edit/:id', courseController.editForm);
-router.post('/course/edit/:id', courseController.edit);
-
-// Carrito
-router.get('/cart', (req, res) => res.render('users/courseCart', { title: "Carrito" }));
+// 🔹 CARRITO
+router.get('/cart', (req, res) => {
+  res.render('users/courseCart', { title: 'Mi Carrito' });
+});
 
 module.exports = router;

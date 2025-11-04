@@ -18,7 +18,7 @@ const courseController = {
   },
 
   create: (req, res) => {
-    // Aquí podría ir validación y guardado real. Por consigna solo redirigimos.
+    
     console.log('Curso creado:', req.body);
     res.redirect('/courses');
   },

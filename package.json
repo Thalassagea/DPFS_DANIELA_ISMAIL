@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Thalassagea/DPFS_DANIELA_ISMAIL#readme",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "method-override": "^3.0.0"
   }
 }
