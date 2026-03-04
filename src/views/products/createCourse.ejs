@@ -2,26 +2,37 @@
 <%- include('../partials/header') %>
 
 <main class="registro-main">
-  <form class="formulario-registro" action="/course/create" method="POST">
+  <% if (typeof errors !== 'undefined' && errors.length) { %>
+    <ul class="error-list">
+      <% errors.forEach(e => { %>
+        <li class="error"><%= e.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <form class="formulario-registro" action="/courses" method="POST">
     <h2>Crear Curso</h2>
 
     <label for="name">Nombre del curso</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="name" name="name" value="<%= (old && old.name) ? old.name : '' %>" required>
 
     <label for="description">Descripción</label>
-    <input type="text" id="description" name="description" required>
+    <input type="text" id="description" name="description" value="<%= (old && old.description) ? old.description : '' %>" required>
 
     <label for="image">Imagen (URL)</label>
-    <input type="text" id="image" name="image">
+    <input type="text" id="image" name="image" value="<%= (old && old.image) ? old.image : '' %>">
 
     <label for="category">Categoría</label>
-    <input type="text" id="category" name="category">
+    <input type="text" id="category" name="category" value="<%= (old && old.category) ? old.category : '' %>" required>
 
-    <label for="color">Color</label>
-    <input type="text" id="color" name="color">
+    <label for="colors">Colores (separados por coma)</label>
+    <input type="text" id="colors" name="colors" value="<%= (old && old.colors) ? old.colors : '' %>" />
 
     <label for="price">Precio</label>
-    <input type="text" id="price" name="price" required>
+    <input type="number" id="price" name="price" min="0" step="1" value="<%= (old && old.price) ? old.price : '' %>" required>
+
+    <label for="stock">Stock</label>
+    <input type="number" id="stock" name="stock" min="0" step="1" value="<%= (old && old.stock) ? old.stock : '' %>">
 
     <button type="submit">Crear Curso</button>
   </form>

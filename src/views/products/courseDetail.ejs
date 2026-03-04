@@ -1,14 +1,18 @@
+<!-- c:\Users\thala\Desktop\PROYECTO_FINAL\DPFS_DANIELA_ISMAIL\src\views\products\courseDetail.ejs -->
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
 <main class="detalle-curso">
   <section class="curso-info">
-    <img src="<%= course.image %>" alt="<%= course.name %>">
+    <% const imageSrc = course.image && course.image.startsWith('/') ? course.image : `/imgs/${course.image || 'hero.png'}`; %>
+    <img src="<%= imageSrc %>" alt="<%= course.name %>">
+
     <div class="info-texto">
       <h2><%= course.name %></h2>
       <p><strong>Categoría:</strong> <%= course.category %></p>
       <p><strong>Precio:</strong> $<%= course.price %></p>
       <p class="descripcion"><%= course.description %></p>
+
       <button class="btn">Agregar al carrito</button>
     </div>
   </section>

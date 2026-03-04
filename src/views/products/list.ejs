@@ -1,3 +1,4 @@
+<!-- c:\Users\thala\Desktop\PROYECTO_FINAL\DPFS_DANIELA_ISMAIL\src\views\products\list.ejs -->
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
@@ -6,8 +7,9 @@
     <h2>Listado de Cursos</h2>
     <div class="cursos">
       <% courses.forEach(course => { %>
+        <% const imageSrc = course.image && course.image.startsWith('/') ? course.image : `/imgs/${course.image || 'hero.png'}`; %>
         <div class="curso">
-          <img src="<%= course.image %>" alt="<%= course.name %>">
+          <img src="<%= imageSrc %>" alt="<%= course.name %>">
           <h3><%= course.name %></h3>
           <p><%= course.description %></p>
           <a href="/courses/<%= course.id %>" class="btn-vermas">Ver más</a>

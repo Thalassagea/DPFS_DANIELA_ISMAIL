@@ -1,16 +1,28 @@
-<header>
+<!-- c:\Users\thala\Desktop\PROYECTO_FINAL\DPFS_DANIELA_ISMAIL\src\views\partials\header.ejs -->
+<header class="main-header">
   <div class="nav-container">
-    <div class="logo">MindCare</div>
+    <a href="/" class="logo">MindCare</a>
 
     <input type="checkbox" id="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/courses">Cursos</a>
-      <a href="/cart">Carrito</a>
-      <a href="/users/login">Ingresar</a>
-      <a href="/users/register">Registrarse</a>
+    <nav class="navbar-links">
+      <div class="nav-primary">
+        <a href="/">Inicio</a>
+        <a href="/courses">Cursos</a>
+        <a href="/cart">Carrito</a>
+      </div>
+
+      <div class="nav-user">
+        <% if (typeof isLogged !== 'undefined' && isLogged) { %>
+          <span class="user-greeting">Hola, <%= userLogged.firstName %>!</span>
+          <a href="/users/profile" class="btn-nav">Mi perfil</a>
+          <a href="/users/logout" class="btn-nav btn-nav-logout">Cerrar sesión</a>
+        <% } else { %>
+          <a href="/users/login" class="btn-nav">Ingresar</a>
+          <a href="/users/register" class="btn-nav">Registrarse</a>
+        <% } %>
+      </div>
     </nav>
   </div>
 </header>

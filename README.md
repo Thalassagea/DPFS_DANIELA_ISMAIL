@@ -23,11 +23,55 @@ Me entusiasma especialmente este proyecto porque combina dos áreas que me apasi
 - **Insight Timer** : App con variedad de formatos (cursos, meditaciones, eventos), muy accesible y versátil.
 - **Unmind** : Plataforma corporativa enfocada en mental-health training para empresas; utiliza coaching conversacional con IA, recursos científicos y acceso a terapeutas, ideal para inspirarse en un enfoque B2B (Business to Business). 
 
-## Retrospectiva Sprint 1
-Para ver el análisis de la retrospectiva del Sprint 1, consultar el archivo [retro.md](./retro.md).
+## Retrospectiva Sprints
+Para ver el análisis de la retrospectiva de los sprints, consultar el archivo [retro.md](./retro.md).
+
+## Cómo ejecutar el proyecto
+
+### Backend (API + EJS)
+1. Abrir una terminal (Símbolo del sistema).
+2. Ejecutar:
+
+```
+cd C:\Users\thala\Desktop\PROYECTO_FINAL\DPFS_DANIELA_ISMAIL
+npm install
+node app.js
+```
+
+El servidor quedará disponible en `http://localhost:3000`.
+
+### Dashboard (React)
+1. Abrir otra terminal.
+2. Ejecutar:
+
+```
+cd C:\Users\thala\Desktop\PROYECTO_FINAL\dashboard
+npm install
+npm run dev
+```
+
+El dashboard quedará disponible en `http://localhost:5173`.
+
+## Endpoints API
+
+### Usuarios
+- `GET /api/users`
+  - Devuelve `count`, `next`, `previous`, `users[]` con `id`, `name`, `email`, `detail`.
+- `GET /api/users/:id`
+  - Devuelve todos los campos del usuario + `imageURL` sin datos sensibles.
+
+### Productos/Cursos
+- `GET /api/products` (alias requerido por consigna)
+  - Devuelve `count`, `countByCategory`, `products[]`, `next`, `previous`.
+- `GET /api/products/:id`
+  - Devuelve todos los campos + relaciones y `imageURL`.
+
+### Paginado
+- `GET /api/products?page=1&limit=10`
+- `GET /api/users?page=1&limit=10`
 
 ## Tablero de trabajo
 
-El seguimiento del sprint 2 se puede visualizar a través del siguiente tablero en Trello:
+El seguimiento del sprint  se puede visualizar a través del siguiente tablero en Trello:
 
-[Trello - Sprint 2 MindCare](https://trello.com/invite/b/68d5062f6ecd480dbcaff708/ATTI858a6b83c4c6f85ae69529b06b83162047773EB9/sprint-2-mindcare)
+https://trello.com/invite/b/68d5062f6ecd480dbcaff708/ATTI858a6b83c4c6f85ae69529b06b83162047773EB9/mindcare-sprints

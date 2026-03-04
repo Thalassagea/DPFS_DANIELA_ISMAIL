@@ -1,58 +1,53 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
+const { body } = require("express-validator");
 
-const DATA_PATH = path.join(__dirname, '..', 'data', 'users.json');
+// ---------------------------
+//  CONTROLADOR
+// ---------------------------
+const userController = require("../controllers/userController");
 
-function readUsers() {
-  try {
-    const raw = fs.readFileSync(DATA_PATH, 'utf-8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Error reading users.json', err);
-    return [];
-  }
-}
+// ---------------------------
+//  MIDDLEWARES
+// ---------------------------
+// Ajustado a tu estructura actual: src/middlewares/
+const uploadFile = require("../src/middlewares/multerUsers");
+const guestMiddleware = require("../src/middlewares/guestMiddleware");
+const authMiddleware = require("../src/middlewares/authMiddleware");
 
-function writeUsers(users) {
-  fs.writeFileSync(DATA_PATH, JSON.stringify(users, null, 2), 'utf-8');
-}
+const registerValidations = [
+  body("firstName").trim().notEmpty().withMessage("Nombre obligatorio"),
+  body("lastName").trim().notEmpty().withMessage("Apellido obligatorio"),
+  body("email").isEmail().withMessage("Email inválido"),
+  body("password").isLength({ min: 6 }).withMessage("Mínimo 6 caracteres")
+];
 
-// REGISTER
-router.get('/register', (req, res) => {
-  res.render('users/register', { title: 'Registrarse' });
-});
+const loginValidations = [
+  body("email").isEmail().withMessage("Email inválido"),
+  body("password").notEmpty().withMessage("Contraseña obligatoria")
+];
 
-router.post('/register', (req, res) => {
-  const users = readUsers();
-  const body = req.body;
-  const maxId = users.reduce((acc, u) => Math.max(acc, Number(u.id || 0)), 0);
-  const newUser = {
-    id: maxId + 1,
-    firstName: body.firstName || '',
-    lastName: body.lastName || '',
-    email: body.email || '',
-    password: body.password || '',
-    category: body.category || '',
-    image: body.image || ''
-  };
-  users.push(newUser);
-  writeUsers(users);
-  res.redirect('/');
-});
+// ---------------------------
+//  RUTAS DE USUARIO
+// ---------------------------
 
-// LOGIN
-router.get('/login', (req, res) => {
-  res.render('users/login', { title: 'Ingresar' });
-});
+// Registro de usuario (solo huéspedes)
+router.get("/register", guestMiddleware, userController.register);
+router.post(
+  "/register",
+  uploadFile.single("image"),
+  registerValidations,
+  userController.processRegister
+);
 
-router.post('/login', (req, res) => {
-  const users = readUsers();
-  const { email, password } = req.body;
-  const user = users.find(u => u.email === email && u.password === password);
-  if (!user) return res.redirect('/users/login');
-  res.redirect('/');
-});
+// Login de usuario (solo huéspedes)
+router.get("/login", guestMiddleware, userController.login);
+router.post("/login", loginValidations, userController.processLogin);
+
+// Perfil de usuario (solo usuarios logueados)
+router.get("/profile", authMiddleware, userController.profile);
+
+// Logout
+router.get("/logout", userController.logout);
 
 module.exports = router;

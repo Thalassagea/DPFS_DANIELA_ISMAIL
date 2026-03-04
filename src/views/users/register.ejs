@@ -1,28 +1,49 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<main class="registro-main">
-  <section class="formulario-registro">
-    <h2>Crear cuenta</h2>
-    <form action="/register" method="post">
-      <label for="nombre">Nombre</label>
-      <input type="text" id="nombre" name="nombre" required>
+<main class="register-container">
+  <h2 class="form-title">Crear cuenta</h2>
 
+  <% if (typeof errors !== 'undefined' && errors.length) { %>
+    <ul class="error-list">
+      <% errors.forEach(e => { %>
+        <li class="error"><%= e.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <form action="/users/register" method="POST" enctype="multipart/form-data" class="form-register">
+    <div class="form-group">
+      <label for="firstName">Nombre</label>
+      <input type="text" id="firstName" name="firstName" value="<%= (old && old.firstName) ? old.firstName : '' %>" required>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Apellido</label>
+      <input type="text" id="lastName" name="lastName" value="<%= (old && old.lastName) ? old.lastName : '' %>" required>
+    </div>
+
+    <div class="form-group">
       <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" value="<%= (old && old.email) ? old.email : '' %>" required>
+    </div>
 
+    <div class="form-group">
       <label for="password">Contraseña</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" required minlength="6">
+    </div>
 
-      <label class="checkbox-label">
-        <input type="checkbox" name="terms" required>
-        Acepto términos y condiciones
-      </label>
+    <div class="form-group">
+      <label for="image">Foto de perfil</label>
+      <input type="file" id="image" name="image" accept="image/*">
+    </div>
 
-      <button type="submit" class="btn">Registrarse</button>
-    </form>
-  </section>
+    <button type="submit" class="btn">Registrarme</button>
+
+    <p class="text-small">
+      ¿Ya tenés una cuenta? <a href="/users/login">Ingresá aquí</a>
+    </p>
+  </form>
 </main>
 
 <%- include('../partials/footer') %>
- 

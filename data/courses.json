@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Curso Mindfulness Básico",
+    "description": "Introducción al mindfulness para manejo del estrés.",
+    "image": "mindfulness.png",
+    "category": "Mindfulness",
+    "colors": ["azul"],
+    "price": 10000,
+    "stock": 50,
+    "createdAt": "2024-11-01T10:00:00Z",
+    "updatedAt": "2024-11-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Gestión del Estrés Laboral",
+    "description": "Herramientas para reducir el estrés en el trabajo.",
+    "image": "gestionEstres.png",
+    "category": "Gestión",
+    "colors": ["verde"],
+    "price": 12000,
+    "stock": 35,
+    "createdAt": "2024-12-10T09:30:00Z",
+    "updatedAt": "2024-12-10T09:30:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Bienestar Emocional",
+    "description": "Técnicas prácticas para el bienestar emocional.",
+    "image": "bienestarEmocional.png",
+    "category": "Bienestar",
+    "colors": ["gris"],
+    "price": 12000,
+    "stock": 40,
+    "createdAt": "2025-01-15T14:20:00Z",
+    "updatedAt": "2025-01-15T14:20:00Z"
+  }
+]

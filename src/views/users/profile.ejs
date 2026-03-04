@@ -1,0 +1,43 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<main class="perfil-container">
+  <section class="perfil-card">
+    <h2>Mi perfil</h2>
+
+    <div class="perfil-header">
+      <img
+        src="/images/users/<%= user.image %>"
+        alt="Foto de perfil de <%= user.firstName %>"
+        class="perfil-img"
+        onerror="this.onerror=null;this.src='/images/users/default.png';"
+      />
+      <div>
+        <h3><%= user.firstName %> <%= user.lastName %></h3>
+        <p class="perfil-subtitle">Información de tu cuenta</p>
+      </div>
+    </div>
+
+    <div class="perfil-datos">
+      <div class="perfil-row">
+        <span class="perfil-label">Nombre</span>
+        <span class="perfil-value"><%= user.firstName %> <%= user.lastName %></span>
+      </div>
+      <div class="perfil-row">
+        <span class="perfil-label">Email</span>
+        <span class="perfil-value"><%= user.email %></span>
+      </div>
+      <div class="perfil-row">
+        <span class="perfil-label">Categoría</span>
+        <span class="perfil-value"><%= user.category %></span>
+      </div>
+    </div>
+
+    <div class="perfil-actions">
+      <a href="/" class="btn">Volver al inicio</a>
+      <a href="/users/logout" class="btn btn-logout">Cerrar sesión</a>
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>

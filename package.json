@@ -1,8 +1,20 @@
 {
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "express-session": "^1.18.2",
+    "method-override": "^3.0.0",
+    "multer": "^2.0.2"
+  },
   "name": "dpfs_daniela_ismail",
   "version": "1.0.0",
   "description": "MindCare es un e-commerce dedicado a ofrecer cursos online sobre salud mental, dictados por psicólogos y profesionales especializados en distintas áreas del bienestar emocional. Los usuarios podrán acceder a contenidos enfocados en temáticas como el manejo de la ansiedad, autoestima, habilidades sociales, estrés laboral, mindfulness, y más.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,10 +29,5 @@
   "bugs": {
     "url": "https://github.com/Thalassagea/DPFS_DANIELA_ISMAIL/issues"
   },
-  "homepage": "https://github.com/Thalassagea/DPFS_DANIELA_ISMAIL#readme",
-  "dependencies": {
-    "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "method-override": "^3.0.0"
-  }
+  "homepage": "https://github.com/Thalassagea/DPFS_DANIELA_ISMAIL#readme"
 }
